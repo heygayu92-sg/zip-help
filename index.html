@@ -527,21 +527,21 @@
         summaryLabel.textContent = fmtSize(totalBytes) + ' selected';
         summaryLabel.style.color = 'var(--ink)';
         summarySub.style.color = 'var(--success)';
-        summarySub.textContent = 'Looking good — zipping will make this even smaller.';
+        summarySub.textContent = 'Looking good — Zipping will make this even smaller.';
         summaryIcon.innerHTML = iconFolder('#059669');
       } else if (totalBytes < EMAIL_LIMIT) {
         summaryBar.style.background = 'var(--warning)';
         summaryLabel.textContent = fmtSize(totalBytes) + ' selected';
         summaryLabel.style.color = 'var(--ink)';
         summarySub.style.color = 'var(--warning)';
-        summarySub.textContent = 'Getting close to 25MB — zip it to shrink the size.';
+        summarySub.textContent = 'Getting close to 20MB — Zip it to shrink the size.';
         summaryIcon.innerHTML = iconFolder('#D97706');
       } else {
         summaryBar.style.background = 'var(--error)';
         summaryLabel.textContent = fmtSize(totalBytes) + ' selected';
         summaryLabel.style.color = 'var(--ink)';
         summarySub.style.color = 'var(--error)';
-        summarySub.textContent = 'Over 25MB — zipping may help, but results depend on file types.';
+        summarySub.textContent = 'Over 20MB — zipping may help, but results depend on file types.';
         summaryIcon.innerHTML = iconFolder('#DC2626');
       }
     } else {
@@ -615,10 +615,10 @@
       // Email limit badge
       if (zippedSize <= EMAIL_LIMIT) {
         emailBadge.className = 'email-badge ok';
-        emailBadge.innerHTML = `<svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Under 25MB — safe to send as an email attachment!`;
+        emailBadge.innerHTML = `<svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Under 20MB — Please download the zip folder and send it via the form submission`;
       } else {
         emailBadge.className = 'email-badge over';
-        emailBadge.innerHTML = `<svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Still over 25MB — try removing some large files and zipping again.`;
+        emailBadge.innerHTML = `<svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Over 20MB — Please download the zip folder and send it via email`;
       }
 
       progressFill.style.width = '100%';
